@@ -267,6 +267,16 @@ const LandingPage = () => {
             </div>
           </div>
           <p className="text-center text-text-secondary/60 text-xs mt-8">All times in IST (Indian Standard Time)</p>
+
+          {/* CTA below Timeline */}
+          <div className="flex justify-center mt-12">
+            <Button
+              onClick={() => navigate('/select-role')}
+              className="bg-cyan text-navy-primary hover:bg-cyan/90 font-display font-bold text-lg px-8 py-6 rounded-xl glow-cyan"
+            >
+              Register Now <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -435,6 +445,18 @@ const LandingPage = () => {
                 <p className="text-text-secondary text-sm">{faq.a}</p>
               </Card>
             ))}
+          </div>
+
+          {/* CTA below FAQs */}
+          <div className="flex flex-col items-center mt-12">
+            <p className="text-text-secondary text-sm mb-4">Ready to showcase your skills?</p>
+            <Button
+              onClick={() => navigate('/select-role')}
+              className="bg-cyan text-navy-primary hover:bg-cyan/90 font-display font-bold text-lg px-8 py-6 rounded-xl glow-cyan"
+            >
+              Register Now <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+            <p className="text-text-secondary/60 text-xs mt-3">Free registration • No credit card required</p>
           </div>
         </div>
       </section>
