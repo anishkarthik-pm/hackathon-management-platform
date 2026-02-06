@@ -90,33 +90,39 @@ const LandingPage = () => {
   };
 
   const rules = [
-    { 
-      title: 'Team size: 2-4 members', 
-      details: 'Each team must have between 2 and 4 members. Solo participants are allowed but can form teams later. Teams cannot be changed after the hackathon starts.' 
+    {
+      title: 'Exclusive to Great Learning learners',
+      details: 'This hackathon is open to all enrolled Great Learning students — developers, data analysts, and tech learners. Verify your enrollment during registration.'
     },
-    { 
-      title: 'Duration: 24 hours', 
-      details: 'The hackathon runs for exactly 24 hours from Feb 15, 9 AM to Feb 16, 9 AM. All submissions must be made before the deadline.' 
+    {
+      title: 'Team size: 2-4 members',
+      details: 'Each team must have 2-4 members. Don\'t have a team? No worries — solo registrants will be paired with other participants to form teams before the hackathon begins.'
     },
-    { 
-      title: 'Original work only', 
-      details: 'All code and assets must be created during the hackathon. Using open-source libraries is allowed. Pre-existing projects are not permitted.' 
+    {
+      title: 'Duration: 24 hours',
+      details: 'The hackathon runs for exactly 24 hours from Feb 15, 9 AM IST to Feb 16, 9 AM IST. All submissions must be made before the deadline.'
     },
-    { 
-      title: 'GitHub + working demo required', 
-      details: 'You must submit a public GitHub repository with your code and a working demo (deployed or video). README should include setup instructions.' 
+    {
+      title: 'Original work only',
+      details: 'All code and assets must be created during the hackathon. Using open-source libraries is allowed. Pre-existing projects are not permitted.'
     },
-    { 
-      title: 'Judging: innovation, execution, impact', 
-      details: 'Projects will be judged on innovation (25%), execution (25%), presentation (20%), impact (20%), and code quality (10%).' 
+    {
+      title: 'Submit your code + a short demo',
+      details: 'Submit a public GitHub repository with your code and a working demo (deployed app or video walkthrough). README should include setup instructions.'
+    },
+    {
+      title: 'Judging criteria',
+      details: 'Projects will be judged on innovation (25%), execution (25%), presentation (20%), impact (20%), and code quality (10%). All skill levels welcome!'
     },
   ];
 
   const faqs = [
-    { q: 'Who can participate?', a: 'Anyone with a passion for coding! Students, professionals, and hobbyists are all welcome.' },
-    { q: 'Is there a registration fee?', a: 'No, participation is completely free!' },
-    { q: 'What should I bring?', a: 'Your laptop, charger, and enthusiasm! Food and refreshments will be provided.' },
-    { q: 'Can I work remotely?', a: 'Yes, this is a virtual hackathon. You can participate from anywhere.' },
+    { q: 'Who can participate?', a: 'This hackathon is exclusively for Great Learning enrolled students — developers, data analysts, and all tech learners. You\'ll verify your enrollment during registration.' },
+    { q: 'Is there a registration fee?', a: 'No, participation is completely free for all Great Learning learners!' },
+    { q: 'What if I don\'t have a team?', a: 'No problem! Register as a solo participant and we\'ll pair you with other learners to form a team before Feb 15. You\'ll have time to connect and plan together.' },
+    { q: 'Can I work remotely?', a: 'Yes! This is a fully virtual hackathon. Participate from anywhere with a stable internet connection.' },
+    { q: 'What tech stack can I use?', a: 'Use any language, framework, or tools you\'re comfortable with. We judge ideas and execution, not specific technologies.' },
+    { q: 'Do I need to be online for 24 hours?', a: 'No! Work at your own pace within the 24-hour window. Coordinate with your team on shifts if needed. Just submit before the deadline.' },
   ];
 
   return (
@@ -150,15 +156,23 @@ const LandingPage = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-primary/90 via-navy-primary/30 to-transparent" />
-              <div className="absolute top-4 right-4 bg-magenta/20 text-magenta px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider">
-                LIVE EVENT
+              <div className="absolute top-4 right-4 flex gap-2">
+                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider">
+                  FREE ENTRY
+                </span>
+                <span className="bg-magenta/20 text-magenta px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider">
+                  VIRTUAL
+                </span>
               </div>
               <div className="absolute bottom-8 left-8">
                 <h1 className="hero-title font-display text-5xl md:text-7xl font-bold text-white mb-2">
                   GL HACKATHON <span className="text-cyan">2026</span>
                 </h1>
                 <p className="hero-subtitle font-display text-2xl md:text-3xl text-text-secondary">
-                  "Build. Innovate. Win."
+                  24 hours. One idea. ₹1,00,000 in prizes.
+                </p>
+                <p className="text-sm text-text-secondary/80 mt-3">
+                  Exclusive to Great Learning learners • Developers & Data Analysts
                 </p>
               </div>
             </div>
@@ -183,8 +197,8 @@ const LandingPage = () => {
                   <Users className="w-6 h-6 text-cyan" />
                 </div>
                 <div>
-                  <p className="text-text-secondary text-sm">Teams</p>
-                  <p className="text-white font-semibold text-lg">100</p>
+                  <p className="text-text-secondary text-sm">Team Spots</p>
+                  <p className="text-white font-semibold text-lg">100 max</p>
                 </div>
               </div>
             </Card>
@@ -194,17 +208,22 @@ const LandingPage = () => {
                   <Trophy className="w-6 h-6 text-cyan" />
                 </div>
                 <div>
-                  <p className="text-text-secondary text-sm">Prizes</p>
-                  <p className="text-white font-semibold text-lg">₹1,00,000</p>
+                  <p className="text-text-secondary text-sm">Prize Pool</p>
+                  <p className="text-white font-semibold text-lg">₹1,00,000 INR</p>
                 </div>
               </div>
             </Card>
-            <Button 
-              onClick={() => navigate('/select-role')} 
-              className="hero-cta w-full h-16 bg-cyan text-navy-primary hover:bg-cyan/90 font-display font-bold text-lg rounded-xl glow-cyan"
-            >
-              Register Now <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
+            <div className="hero-cta">
+              <Button
+                onClick={() => navigate('/select-role')}
+                className="w-full h-16 bg-cyan text-navy-primary hover:bg-cyan/90 font-display font-bold text-lg rounded-xl glow-cyan"
+              >
+                Register Free <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <p className="text-center text-text-secondary/70 text-xs mt-2">
+                Registration closes Feb 14 • Takes 2 minutes
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -223,10 +242,10 @@ const LandingPage = () => {
             {/* Timeline Nodes */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { icon: CheckCircle, label: 'Register', date: 'Feb 1-14', status: 'completed', description: 'Register and form your team' },
-                { icon: Clock, label: 'Hack Starts', date: 'Feb 15, 9 AM', status: 'upcoming', description: 'Problem statement released' },
-                { icon: FileText, label: 'Submission', date: 'Feb 16, 6 PM', status: 'upcoming', description: 'Submit your project' },
-                { icon: Trophy, label: 'Results', date: 'Feb 17', status: 'upcoming', description: 'Winners announced' },
+                { icon: CheckCircle, label: 'Register', date: 'Feb 1-14', status: 'completed', description: 'Sign up & form your team (free)' },
+                { icon: Clock, label: 'Hack Starts', date: 'Feb 15, 9 AM IST', status: 'upcoming', description: 'Problem revealed, coding begins' },
+                { icon: FileText, label: 'Submission', date: 'Feb 16, 9 AM IST', status: 'upcoming', description: 'Final deadline for all projects' },
+                { icon: Trophy, label: 'Results', date: 'Feb 17, 6 PM IST', status: 'upcoming', description: 'Winners announced live' },
               ].map((node, index) => (
                 <div key={index} className="timeline-node flex flex-col items-center">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
@@ -249,9 +268,12 @@ const LandingPage = () => {
       {/* Prizes Section */}
       <section ref={prizesRef} className="min-h-screen py-20 px-6 lg:px-12 bg-navy-primary">
         <div className="max-w-7xl mx-auto">
-          <h2 className="prizes-title font-display text-4xl md:text-5xl font-bold text-white text-center mb-16">
+          <h2 className="prizes-title font-display text-4xl md:text-5xl font-bold text-white text-center mb-4">
             PRIZES
           </h2>
+          <p className="text-center text-text-secondary mb-12">
+            Total Prize Pool: <span className="text-cyan font-semibold">₹1,00,000 INR</span>
+          </p>
           
           <div className="grid md:grid-cols-3 gap-8 items-end">
             {[
@@ -282,9 +304,14 @@ const LandingPage = () => {
             ))}
           </div>
           
-          <p className="text-center text-text-secondary mt-16 text-sm">
-            All prizes via UPI / bank transfer within 7 days of results.
-          </p>
+          <div className="text-center mt-16">
+            <p className="text-text-secondary text-sm">
+              All prizes disbursed via UPI / bank transfer within 7 days of results.
+            </p>
+            <p className="text-cyan/70 text-xs mt-2">
+              + Certificates for all participants • Special recognition for top 10 teams
+            </p>
+          </div>
         </div>
       </section>
 
@@ -377,9 +404,10 @@ const LandingPage = () => {
               />
               <div className="p-6">
                 <h3 className="text-white font-semibold text-lg mb-2">Ready to Hack?</h3>
-                <p className="text-text-secondary text-sm mb-4">Join 100+ teams competing for glory and prizes.</p>
+                <p className="text-text-secondary text-sm mb-1">Join fellow Great Learning students in building something amazing.</p>
+                <p className="text-cyan text-xs mb-4">No team? We'll match you with one!</p>
                 <Button onClick={() => navigate('/select-role')} className="w-full bg-cyan text-navy-primary hover:bg-cyan/90">
-                  Register Now <ArrowRight className="ml-2 w-4 h-4" />
+                  Register Free <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </Card>
@@ -410,8 +438,9 @@ const LandingPage = () => {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="font-display text-2xl font-bold text-cyan tracking-wider mb-4">GL</div>
-              <p className="text-text-secondary text-sm">Build. Innovate. Win.</p>
+              <div className="font-display text-2xl font-bold text-cyan tracking-wider mb-2">GL</div>
+              <p className="text-white text-sm font-medium">Great Learning Hackathon</p>
+              <p className="text-text-secondary text-xs mt-1">Organized by Great Learning</p>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
