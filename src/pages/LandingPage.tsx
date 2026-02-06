@@ -21,7 +21,7 @@ const LandingPage = () => {
   const timelineRef = useRef<HTMLDivElement>(null);
   const prizesRef = useRef<HTMLDivElement>(null);
   const rulesRef = useRef<HTMLDivElement>(null);
-  const [expandedRule, setExpandedRule] = useState<number | null>(null);
+  const [expandedRule, setExpandedRule] = useState<number | null>(0); // First rule open by default
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -222,9 +222,8 @@ const LandingPage = () => {
               >
                 Register Free <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <p className="text-center text-xs mt-2">
-                <span className="text-yellow-500/90">Registration closes Feb 14</span>
-                <span className="text-text-secondary/70"> • Takes 2 minutes • No credit card required</span>
+              <p className="text-center text-yellow-500/80 text-xs mt-2">
+                Registration closes Feb 14 • Takes 2 minutes • No credit card required
               </p>
             </div>
           </div>
@@ -232,12 +231,12 @@ const LandingPage = () => {
       </section>
 
       {/* Timeline Section */}
-      <section ref={timelineRef} className="min-h-screen py-20 px-6 lg:px-12 bg-navy-secondary">
+      <section ref={timelineRef} className="py-24 px-6 lg:px-12 bg-navy-secondary">
         <div className="max-w-7xl mx-auto">
-          <h2 className="timeline-title font-display text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="timeline-title font-display text-4xl md:text-5xl font-bold text-white mb-2 text-center">
             TIMELINE
           </h2>
-          <p className="text-text-secondary mb-12">Your path from idea to impact</p>
+          <p className="text-text-secondary text-center mb-12">Your path from idea to impact</p>
           
           <div className="relative">
             {/* Timeline Track */}
@@ -266,22 +265,22 @@ const LandingPage = () => {
               ))}
             </div>
           </div>
-          <p className="text-center text-text-secondary/60 text-xs mt-8">All times in IST (Indian Standard Time)</p>
+          <p className="text-center text-text-secondary/60 text-xs mt-8 mb-8">All times in IST (Indian Standard Time)</p>
 
           {/* CTA below Timeline */}
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center">
             <Button
               onClick={() => navigate('/select-role')}
-              className="bg-cyan text-navy-primary hover:bg-cyan/90 font-display font-bold text-lg px-8 py-6 rounded-xl glow-cyan"
+              className="bg-cyan text-navy-primary hover:bg-cyan/90 font-display font-semibold text-base px-6 py-5 rounded-xl"
             >
-              Register Now <ArrowRight className="ml-2 w-5 h-5" />
+              Register Free <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Prizes Section */}
-      <section ref={prizesRef} className="min-h-screen py-20 px-6 lg:px-12 bg-navy-primary">
+      <section ref={prizesRef} className="py-24 px-6 lg:px-12 bg-navy-primary">
         <div className="max-w-7xl mx-auto">
           <h2 className="prizes-title font-display text-4xl md:text-5xl font-bold text-white text-center mb-4">
             PRIZES
@@ -308,7 +307,7 @@ const LandingPage = () => {
                   <div className={`font-display font-bold tracking-wide ${prize.featured ? 'text-5xl text-cyan' : 'text-4xl text-white'}`}>
                     {prize.amount}
                   </div>
-                  <p className="text-text-secondary mt-4">Cash Prize per team</p>
+                  <p className="text-text-secondary mt-4">Cash Prize <span className="text-white font-medium">per team</span></p>
                   {prize.featured && (
                     <div className="mt-4 inline-block px-3 py-1 bg-cyan/20 text-cyan text-xs rounded-full">
                       🏆 Grand Prize
@@ -323,7 +322,7 @@ const LandingPage = () => {
             <p className="text-text-secondary text-sm">
               All prizes disbursed via UPI / bank transfer <span className="text-white font-medium">within 7 days</span> of results.
             </p>
-            <p className="text-cyan/70 text-xs mt-2">
+            <p className="text-cyan/70 text-xs mt-4">
               + LinkedIn-shareable certificates for all participants • Special recognition for top 10 teams
             </p>
           </div>
@@ -331,7 +330,7 @@ const LandingPage = () => {
       </section>
 
       {/* Rules Section */}
-      <section ref={rulesRef} className="min-h-screen py-20 px-6 lg:px-12 bg-navy-secondary">
+      <section ref={rulesRef} className="py-24 px-6 lg:px-12 bg-navy-secondary">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-start">
           <div>
             <h2 className="rules-title font-display text-4xl md:text-5xl font-bold text-white mb-10">
@@ -367,7 +366,7 @@ const LandingPage = () => {
               <Dialog>
                 <DialogTrigger asChild>
                   <Button className="bg-cyan text-navy-primary hover:bg-cyan/90 font-semibold">
-                    Read Complete Rules <ArrowRight className="ml-2 w-4 h-4" />
+                    Read Full Rules <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="bg-navy-secondary border-white/10 max-w-2xl max-h-[80vh] overflow-y-auto">
@@ -432,15 +431,16 @@ const LandingPage = () => {
       </section>
 
       {/* FAQs Section */}
-      <section className="py-20 px-6 lg:px-12 bg-navy-primary">
+      <section className="py-24 px-6 lg:px-12 bg-navy-primary">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-12">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-2">
             FREQUENTLY ASKED <span className="text-cyan">QUESTIONS</span>
           </h2>
-          
+          <p className="text-text-secondary text-center mb-12">Quick answers to common questions</p>
+
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <Card key={index} className="bg-navy-secondary border-white/10 rounded-xl p-6">
+              <Card key={index} className="bg-navy-secondary border-white/10 border-l-4 border-l-cyan/50 rounded-xl p-6">
                 <h3 className="text-white font-semibold mb-2">{faq.q}</h3>
                 <p className="text-text-secondary text-sm">{faq.a}</p>
               </Card>
@@ -454,7 +454,7 @@ const LandingPage = () => {
               onClick={() => navigate('/select-role')}
               className="bg-cyan text-navy-primary hover:bg-cyan/90 font-display font-bold text-lg px-8 py-6 rounded-xl glow-cyan"
             >
-              Register Now <ArrowRight className="ml-2 w-5 h-5" />
+              Register Free <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <p className="text-text-secondary/60 text-xs mt-3">Free registration • No credit card required</p>
           </div>
@@ -486,21 +486,31 @@ const LandingPage = () => {
                 <button onClick={() => alert('Contact support modal would open')} className="block text-white hover:text-cyan text-sm font-medium flex items-center gap-2">
                   <MessageCircle className="w-4 h-4" /> Contact Support
                 </button>
+                <p className="text-text-secondary/60 text-xs">Response within 24 hours</p>
                 <button onClick={() => alert('Terms modal would open')} className="block text-text-secondary hover:text-cyan text-sm">Terms & Conditions</button>
               </div>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Connect</h4>
               <div className="flex gap-4">
-                <button onClick={() => window.open('https://twitter.com', '_blank')} className="w-10 h-10 rounded-lg bg-navy-secondary flex items-center justify-center text-text-secondary hover:text-cyan hover:border-cyan/50 border border-transparent transition-all">
-                  <ExternalLink className="w-5 h-5" />
-                </button>
-                <button onClick={() => window.open('https://linkedin.com', '_blank')} className="w-10 h-10 rounded-lg bg-navy-secondary flex items-center justify-center text-text-secondary hover:text-cyan hover:border-cyan/50 border border-transparent transition-all">
-                  <ExternalLink className="w-5 h-5" />
-                </button>
-                <button onClick={() => window.open('https://discord.com', '_blank')} className="w-10 h-10 rounded-lg bg-navy-secondary flex items-center justify-center text-text-secondary hover:text-cyan hover:border-cyan/50 border border-transparent transition-all">
-                  <MessageCircle className="w-5 h-5" />
-                </button>
+                <div className="flex flex-col items-center">
+                  <button onClick={() => window.open('https://twitter.com', '_blank')} aria-label="Twitter" title="Twitter" className="w-10 h-10 rounded-lg bg-navy-secondary flex items-center justify-center text-text-secondary hover:text-cyan hover:border-cyan/50 border border-transparent transition-all">
+                    <ExternalLink className="w-5 h-5" />
+                  </button>
+                  <span className="text-xs text-text-secondary/60 mt-1">Twitter</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <button onClick={() => window.open('https://linkedin.com', '_blank')} aria-label="LinkedIn" title="LinkedIn" className="w-10 h-10 rounded-lg bg-navy-secondary flex items-center justify-center text-text-secondary hover:text-cyan hover:border-cyan/50 border border-transparent transition-all">
+                    <ExternalLink className="w-5 h-5" />
+                  </button>
+                  <span className="text-xs text-text-secondary/60 mt-1">LinkedIn</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <button onClick={() => window.open('https://discord.com', '_blank')} aria-label="Discord" title="Discord" className="w-10 h-10 rounded-lg bg-navy-secondary flex items-center justify-center text-text-secondary hover:text-cyan hover:border-cyan/50 border border-transparent transition-all">
+                    <MessageCircle className="w-5 h-5" />
+                  </button>
+                  <span className="text-xs text-text-secondary/60 mt-1">Discord</span>
+                </div>
               </div>
             </div>
           </div>
