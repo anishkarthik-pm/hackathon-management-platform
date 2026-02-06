@@ -91,38 +91,39 @@ const LandingPage = () => {
 
   const rules = [
     {
-      title: 'Exclusive to Great Learning learners',
+      title: '🎓 Who can participate',
       details: 'This hackathon is open to all enrolled Great Learning students — developers, data analysts, and tech learners. Verify your enrollment during registration.'
     },
     {
-      title: 'Team size: 2-4 members',
-      details: 'Each team must have 2-4 members. Don\'t have a team? No worries — solo registrants will be paired with other participants to form teams before the hackathon begins.'
+      title: '👥 Team size: 2-4 members',
+      details: 'Each team must have 2-4 members. No team yet? Register solo — we\'ll match you with fellow learners before Feb 15.'
     },
     {
-      title: 'Duration: 24 hours',
+      title: '⏱️ Duration: 24 hours',
       details: 'The hackathon runs for exactly 24 hours from Feb 15, 9 AM IST to Feb 16, 9 AM IST. All submissions must be made before the deadline.'
     },
     {
-      title: 'Original work only',
+      title: '✨ Original work only',
       details: 'All code and assets must be created during the hackathon. Using open-source libraries is allowed. Pre-existing projects are not permitted.'
     },
     {
-      title: 'Submit your code + a short demo',
+      title: '📦 Submit your code + a short demo',
       details: 'Submit a public GitHub repository with your code and a working demo (deployed app or video walkthrough). README should include setup instructions.'
     },
     {
-      title: 'Judging criteria',
-      details: 'Projects will be judged on innovation (25%), execution (25%), presentation (20%), impact (20%), and code quality (10%). All skill levels welcome!'
+      title: '📊 Judging criteria',
+      details: 'Projects will be judged on innovation (25%), execution (25%), presentation (20%), impact (20%), and code quality (10%). All skill levels welcome — first-time hackers have won before!'
     },
   ];
 
   const faqs = [
-    { q: 'Who can participate?', a: 'This hackathon is exclusively for Great Learning enrolled students — developers, data analysts, and all tech learners. You\'ll verify your enrollment during registration.' },
-    { q: 'Is there a registration fee?', a: 'No, participation is completely free for all Great Learning learners!' },
     { q: 'What if I don\'t have a team?', a: 'No problem! Register as a solo participant and we\'ll pair you with other learners to form a team before Feb 15. You\'ll have time to connect and plan together.' },
-    { q: 'Can I work remotely?', a: 'Yes! This is a fully virtual hackathon. Participate from anywhere with a stable internet connection.' },
+    { q: 'Is there a registration fee?', a: 'No, participation is completely free for all Great Learning learners! No credit card required.' },
+    { q: 'Who can participate?', a: 'This hackathon is exclusively for Great Learning enrolled students — developers, data analysts, and all tech learners. You\'ll verify your enrollment during registration.' },
     { q: 'What tech stack can I use?', a: 'Use any language, framework, or tools you\'re comfortable with. We judge ideas and execution, not specific technologies.' },
-    { q: 'Do I need to be online for 24 hours?', a: 'No! Work at your own pace within the 24-hour window. Coordinate with your team on shifts if needed. Just submit before the deadline.' },
+    { q: 'Do I need to be online for 24 hours?', a: 'Nope! Work at your own pace. Coordinate shifts with your team. Just submit on time.' },
+    { q: 'Can I work remotely?', a: 'Yes! This is a fully virtual hackathon. Participate from anywhere with a stable internet connection.' },
+    { q: 'What happens if I miss the deadline?', a: 'Unfortunately, late submissions cannot be accepted. Set a reminder for Feb 16, 9 AM IST!' },
   ];
 
   return (
@@ -138,8 +139,8 @@ const LandingPage = () => {
             <button onClick={() => navigate('/problem')} className="text-text-secondary hover:text-cyan transition-colors text-sm font-medium">Problem</button>
           </div>
           <div className="flex items-center gap-3">
-            <Button variant="ghost" onClick={() => navigate('/select-role')} className="text-text-secondary hover:text-white">Login</Button>
-            <Button onClick={() => navigate('/select-role')} className="bg-cyan text-navy-primary hover:bg-cyan/90 font-semibold">Register</Button>
+            <Button variant="ghost" onClick={() => navigate('/select-role')} className="text-text-secondary hover:text-white">Sign In</Button>
+            <Button onClick={() => navigate('/select-role')} className="bg-cyan text-navy-primary hover:bg-cyan/90 font-semibold">Register Free</Button>
           </div>
         </div>
       </nav>
@@ -169,10 +170,10 @@ const LandingPage = () => {
                   GL HACKATHON <span className="text-cyan">2026</span>
                 </h1>
                 <p className="hero-subtitle font-display text-2xl md:text-3xl text-text-secondary">
-                  24 hours. One idea. ₹1,00,000 in prizes.
+                  24 hours to build. ₹1,00,000 to win.
                 </p>
-                <p className="text-sm text-text-secondary/80 mt-3">
-                  Exclusive to Great Learning learners • Developers & Data Analysts
+                <p className="text-sm text-white/70 mt-3">
+                  For Great Learning learners • Developers, Data Analysts & Tech Enthusiasts
                 </p>
               </div>
             </div>
@@ -199,6 +200,7 @@ const LandingPage = () => {
                 <div>
                   <p className="text-text-secondary text-sm">Team Spots</p>
                   <p className="text-white font-semibold text-lg">100 max</p>
+                  <p className="text-yellow-500/80 text-xs">Filling fast</p>
                 </div>
               </div>
             </Card>
@@ -220,8 +222,9 @@ const LandingPage = () => {
               >
                 Register Free <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <p className="text-center text-text-secondary/70 text-xs mt-2">
-                Registration closes Feb 14 • Takes 2 minutes
+              <p className="text-center text-xs mt-2">
+                <span className="text-yellow-500/90">Registration closes Feb 14</span>
+                <span className="text-text-secondary/70"> • Takes 2 minutes • No credit card required</span>
               </p>
             </div>
           </div>
@@ -231,9 +234,10 @@ const LandingPage = () => {
       {/* Timeline Section */}
       <section ref={timelineRef} className="min-h-screen py-20 px-6 lg:px-12 bg-navy-secondary">
         <div className="max-w-7xl mx-auto">
-          <h2 className="timeline-title font-display text-4xl md:text-5xl font-bold text-white mb-16">
+          <h2 className="timeline-title font-display text-4xl md:text-5xl font-bold text-white mb-4">
             TIMELINE
           </h2>
+          <p className="text-text-secondary mb-12">Your path from idea to impact</p>
           
           <div className="relative">
             {/* Timeline Track */}
@@ -242,9 +246,9 @@ const LandingPage = () => {
             {/* Timeline Nodes */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { icon: CheckCircle, label: 'Register', date: 'Feb 1-14', status: 'completed', description: 'Sign up & form your team (free)' },
+                { icon: CheckCircle, label: 'Register', date: 'Feb 1-14', status: 'completed', description: 'Free registration • Solo or with team' },
                 { icon: Clock, label: 'Hack Starts', date: 'Feb 15, 9 AM IST', status: 'upcoming', description: 'Problem revealed, coding begins' },
-                { icon: FileText, label: 'Submission', date: 'Feb 16, 9 AM IST', status: 'upcoming', description: 'Final deadline for all projects' },
+                { icon: FileText, label: 'Submission', date: 'Feb 16, 9 AM IST', status: 'upcoming', description: 'Submit before 9 AM IST — no extensions' },
                 { icon: Trophy, label: 'Results', date: 'Feb 17, 6 PM IST', status: 'upcoming', description: 'Winners announced live' },
               ].map((node, index) => (
                 <div key={index} className="timeline-node flex flex-col items-center">
@@ -255,13 +259,14 @@ const LandingPage = () => {
                   </div>
                   <Card className="bg-navy-primary border-white/10 p-5 rounded-2xl text-center w-full hover:border-cyan/30 transition-colors">
                     <p className="text-white font-semibold mb-1">{node.label}</p>
-                    <p className="text-cyan text-sm font-mono mb-2">{node.date}</p>
+                    <p className="text-cyan text-sm font-mono font-semibold mb-2">{node.date}</p>
                     <p className="text-text-secondary text-xs">{node.description}</p>
                   </Card>
                 </div>
               ))}
             </div>
           </div>
+          <p className="text-center text-text-secondary/60 text-xs mt-8">All times in IST (Indian Standard Time)</p>
         </div>
       </section>
 
@@ -277,12 +282,12 @@ const LandingPage = () => {
           
           <div className="grid md:grid-cols-3 gap-8 items-end">
             {[
-              { rank: '🥈 2nd', amount: '₹30,000', color: 'from-gray-400 to-gray-300', height: 'h-64' },
               { rank: '🥇 1st', amount: '₹50,000', color: 'from-yellow-400 to-yellow-300', featured: true, height: 'h-80' },
+              { rank: '🥈 2nd', amount: '₹30,000', color: 'from-gray-400 to-gray-300', height: 'h-64' },
               { rank: '🥉 3rd', amount: '₹20,000', color: 'from-amber-600 to-amber-500', height: 'h-56' },
             ].map((prize, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className={`prize-card bg-navy-secondary border-white/10 rounded-3xl card-shadow overflow-hidden hover:border-cyan/30 transition-all ${
                   prize.featured ? 'md:scale-110 border-cyan/50' : ''
                 }`}
@@ -290,13 +295,13 @@ const LandingPage = () => {
                 <div className={`h-3 bg-gradient-to-r ${prize.color}`} />
                 <div className="p-8 text-center">
                   <div className="text-5xl mb-4">{prize.rank}</div>
-                  <div className={`font-display font-bold ${prize.featured ? 'text-5xl text-cyan' : 'text-4xl text-white'}`}>
+                  <div className={`font-display font-bold tracking-wide ${prize.featured ? 'text-5xl text-cyan' : 'text-4xl text-white'}`}>
                     {prize.amount}
                   </div>
-                  <p className="text-text-secondary mt-4">Cash Prize</p>
+                  <p className="text-text-secondary mt-4">Cash Prize per team</p>
                   {prize.featured && (
                     <div className="mt-4 inline-block px-3 py-1 bg-cyan/20 text-cyan text-xs rounded-full">
-                      Grand Prize
+                      🏆 Grand Prize
                     </div>
                   )}
                 </div>
@@ -306,10 +311,10 @@ const LandingPage = () => {
           
           <div className="text-center mt-16">
             <p className="text-text-secondary text-sm">
-              All prizes disbursed via UPI / bank transfer within 7 days of results.
+              All prizes disbursed via UPI / bank transfer <span className="text-white font-medium">within 7 days</span> of results.
             </p>
             <p className="text-cyan/70 text-xs mt-2">
-              + Certificates for all participants • Special recognition for top 10 teams
+              + LinkedIn-shareable certificates for all participants • Special recognition for top 10 teams
             </p>
           </div>
         </div>
@@ -352,7 +357,7 @@ const LandingPage = () => {
               <Dialog>
                 <DialogTrigger asChild>
                   <Button className="bg-cyan text-navy-primary hover:bg-cyan/90 font-semibold">
-                    View Full Rules <ArrowRight className="ml-2 w-4 h-4" />
+                    Read Complete Rules <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="bg-navy-secondary border-white/10 max-w-2xl max-h-[80vh] overflow-y-auto">
@@ -405,9 +410,10 @@ const LandingPage = () => {
               <div className="p-6">
                 <h3 className="text-white font-semibold text-lg mb-2">Ready to Hack?</h3>
                 <p className="text-text-secondary text-sm mb-1">Join fellow Great Learning students in building something amazing.</p>
-                <p className="text-cyan text-xs mb-4">No team? We'll match you with one!</p>
+                <p className="text-cyan text-xs mb-1">No team? We'll match you with one!</p>
+                <p className="text-yellow-500/70 text-xs mb-4">Team matching closes Feb 14</p>
                 <Button onClick={() => navigate('/select-role')} className="w-full bg-cyan text-navy-primary hover:bg-cyan/90">
-                  Register Free <ArrowRight className="ml-2 w-4 h-4" />
+                  Join the Hackathon <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </div>
             </Card>
@@ -441,11 +447,12 @@ const LandingPage = () => {
               <div className="font-display text-2xl font-bold text-cyan tracking-wider mb-2">GL</div>
               <p className="text-white text-sm font-medium">Great Learning Hackathon</p>
               <p className="text-text-secondary text-xs mt-1">Organized by Great Learning</p>
+              <p className="text-cyan/60 text-xs mt-1">Trusted by 10,000+ learners</p>
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Quick Links</h4>
               <div className="space-y-2">
-                <button onClick={() => navigate('/select-role')} className="block text-text-secondary hover:text-cyan text-sm">Register</button>
+                <button onClick={() => navigate('/select-role')} className="block text-text-secondary hover:text-cyan text-sm">Register Free</button>
                 <button onClick={() => navigate('/problem')} className="block text-text-secondary hover:text-cyan text-sm">Problem Statement</button>
                 <button onClick={() => navigate('/leaderboard')} className="block text-text-secondary hover:text-cyan text-sm">Leaderboard</button>
               </div>
@@ -454,7 +461,7 @@ const LandingPage = () => {
               <h4 className="text-white font-semibold mb-4">Support</h4>
               <div className="space-y-2">
                 <button onClick={() => alert('FAQ modal would open')} className="block text-text-secondary hover:text-cyan text-sm">FAQs</button>
-                <button onClick={() => alert('Contact support modal would open')} className="block text-text-secondary hover:text-cyan text-sm flex items-center gap-2">
+                <button onClick={() => alert('Contact support modal would open')} className="block text-white hover:text-cyan text-sm font-medium flex items-center gap-2">
                   <MessageCircle className="w-4 h-4" /> Contact Support
                 </button>
                 <button onClick={() => alert('Terms modal would open')} className="block text-text-secondary hover:text-cyan text-sm">Terms & Conditions</button>
