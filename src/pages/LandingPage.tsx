@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Calendar, Users, Trophy, ArrowRight, CheckCircle, Clock, FileText, MessageCircle, Download, ChevronDown, ChevronUp, ExternalLink, Award, Zap, Globe, Briefcase } from 'lucide-react';
+import { Calendar, Users, Trophy, ArrowRight, CheckCircle, Clock, FileText, MessageCircle, Download, ChevronDown, ChevronUp, ExternalLink, Award, Zap, Briefcase } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import {
