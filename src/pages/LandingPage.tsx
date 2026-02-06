@@ -235,25 +235,25 @@ const LandingPage = () => {
             How it works
           </h2>
 
-          <div className="relative">
-            <div className="hidden md:block absolute top-6 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-cyan/30 via-cyan to-cyan/30" />
-
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { label: 'Register', date: 'By Feb 14', icon: CheckCircle },
-                { label: 'Hack', date: 'Feb 15, 9 AM', icon: Zap },
-                { label: 'Submit', date: 'Feb 16, 9 AM', icon: FileText },
-                { label: 'Win', date: 'Feb 17', icon: Trophy },
-              ].map((node, index) => (
-                <div key={index} className="timeline-step flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-cyan/10 border-2 border-cyan flex items-center justify-center mb-2 relative z-10">
-                    <node.icon className="w-5 h-5 text-cyan" />
-                  </div>
-                  <p className="text-white font-semibold text-base mb-0.5">{node.label}</p>
-                  <p className="text-cyan text-sm font-mono">{node.date}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { label: 'Register', date: 'By Feb 14', icon: CheckCircle },
+              { label: 'Hack', date: 'Feb 15, 9 AM', icon: Zap },
+              { label: 'Submit', date: 'Feb 16, 9 AM', icon: FileText },
+              { label: 'Win', date: 'Feb 17', icon: Trophy },
+            ].map((node, index) => (
+              <div key={index} className="timeline-step flex flex-col items-center text-center relative">
+                {/* Connecting line - only between nodes on desktop */}
+                {index < 3 && (
+                  <div className="hidden md:block absolute top-6 left-1/2 w-full h-0.5 bg-gradient-to-r from-cyan to-cyan/30" />
+                )}
+                <div className="w-12 h-12 rounded-full bg-navy-primary border-2 border-cyan flex items-center justify-center mb-2 relative z-10">
+                  <node.icon className="w-5 h-5 text-cyan" />
                 </div>
-              ))}
-            </div>
+                <p className="text-white font-semibold text-base mb-0.5">{node.label}</p>
+                <p className="text-cyan text-sm font-mono">{node.date}</p>
+              </div>
+            ))}
           </div>
 
           <p className="text-center text-text-secondary/60 text-xs mt-6">All times in IST (Indian Standard Time)</p>
