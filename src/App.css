@@ -1,0 +1,96 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom selection color */
+::selection {
+  background-color: rgba(0, 240, 255, 0.3);
+  color: #F4F7FF;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #00F0FF;
+  outline-offset: 2px;
+}
+
+/* Button hover transitions */
+button {
+  transition: all 0.2s ease;
+}
+
+/* Card hover effects */
+.card-shadow {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Slider custom styles */
+[data-slot="slider-track"] {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-slot="slider-range"] {
+  background-color: #00F0FF !important;
+}
+
+[data-slot="slider-thumb"] {
+  background-color: #00F0FF !important;
+  border-color: #00F0FF !important;
+}
+
+/* Progress bar custom styles */
+[data-slot="progress-indicator"] {
+  background-color: #00F0FF !important;
+}
+
+/* Checkbox custom styles */
+[data-state="checked"] {
+  background-color: #00F0FF !important;
+  border-color: #00F0FF !important;
+}
+
+/* Select custom styles */
+[role="listbox"] {
+  background-color: #0D1220 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[role="option"] {
+  color: #F4F7FF !important;
+}
+
+[role="option"]:hover,
+[role="option"][data-highlighted] {
+  background-color: rgba(0, 240, 255, 0.1) !important;
+}
+
+/* Input focus styles */
+input:focus,
+textarea:focus {
+  border-color: #00F0FF !important;
+  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.2) !important;
+}
+
+/* Animation for live indicator */
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 1.5s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .font-display {
+    letter-spacing: 0.01em;
+  }
+}
