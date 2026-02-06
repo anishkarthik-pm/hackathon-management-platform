@@ -96,7 +96,7 @@ const LandingPage = () => {
     },
     { 
       title: 'Duration: 24 hours', 
-      details: 'The hackathon runs for exactly 24 hours from Jan 15, 9 AM to Jan 16, 9 AM. All submissions must be made before the deadline.' 
+      details: 'The hackathon runs for exactly 24 hours from Feb 15, 9 AM to Feb 16, 9 AM. All submissions must be made before the deadline.' 
     },
     { 
       title: 'Original work only', 
@@ -155,7 +155,7 @@ const LandingPage = () => {
               </div>
               <div className="absolute bottom-8 left-8">
                 <h1 className="hero-title font-display text-5xl md:text-7xl font-bold text-white mb-2">
-                  GL HACKATHON <span className="text-cyan">2024</span>
+                  GL HACKATHON <span className="text-cyan">2026</span>
                 </h1>
                 <p className="hero-subtitle font-display text-2xl md:text-3xl text-text-secondary">
                   "Build. Innovate. Win."
@@ -173,7 +173,7 @@ const LandingPage = () => {
                 </div>
                 <div>
                   <p className="text-text-secondary text-sm">Date</p>
-                  <p className="text-white font-semibold text-lg">Jan 15-16</p>
+                  <p className="text-white font-semibold text-lg">Feb 15-16</p>
                 </div>
               </div>
             </Card>
@@ -223,10 +223,10 @@ const LandingPage = () => {
             {/* Timeline Nodes */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               {[
-                { icon: CheckCircle, label: 'Register', date: 'Jan 1-14', status: 'completed', description: 'Register and form your team' },
-                { icon: Clock, label: 'Hack Starts', date: 'Jan 15, 9 AM', status: 'upcoming', description: 'Problem statement released' },
-                { icon: FileText, label: 'Submission', date: 'Jan 16, 6 PM', status: 'upcoming', description: 'Submit your project' },
-                { icon: Trophy, label: 'Results', date: 'Jan 17', status: 'upcoming', description: 'Winners announced' },
+                { icon: CheckCircle, label: 'Register', date: 'Feb 1-14', status: 'completed', description: 'Register and form your team' },
+                { icon: Clock, label: 'Hack Starts', date: 'Feb 15, 9 AM', status: 'upcoming', description: 'Problem statement released' },
+                { icon: FileText, label: 'Submission', date: 'Feb 16, 6 PM', status: 'upcoming', description: 'Submit your project' },
+                { icon: Trophy, label: 'Results', date: 'Feb 17', status: 'upcoming', description: 'Winners announced' },
               ].map((node, index) => (
                 <div key={index} className="timeline-node flex flex-col items-center">
                   <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-4 ${
@@ -447,7 +447,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="pt-8 border-t border-white/5 text-center">
-            <p className="text-text-secondary text-sm">© 2024 GL Hackathon. All rights reserved.</p>
+            <p className="text-text-secondary text-sm">© 2026 GL Hackathon. All rights reserved.</p>
           </div>
         </div>
       </footer>

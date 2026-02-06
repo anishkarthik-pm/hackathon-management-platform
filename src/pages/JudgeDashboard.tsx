@@ -217,7 +217,7 @@ const JudgeDashboard = () => {
               <h1 className="font-display text-2xl md:text-3xl font-bold text-white">
                 Welcome, {judgeName}!
               </h1>
-              <p className="text-text-secondary">Judge Portal - GL Hackathon 2024</p>
+              <p className="text-text-secondary">Judge Portal - GL Hackathon 2026</p>
             </div>
           </div>
 

@@ -42,7 +42,7 @@ const RoleSelectionPage = () => {
         <div className="text-center mb-12">
           <div className="font-display text-4xl font-bold text-cyan tracking-wider mb-4">GL</div>
           <h1 className="font-display text-3xl md:text-4xl font-bold text-white mb-3">
-            GL HACKATHON 2024
+            GL HACKATHON 2026
           </h1>
           <p className="text-text-secondary text-lg">
             Select your role to continue

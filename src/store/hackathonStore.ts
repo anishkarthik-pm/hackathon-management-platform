@@ -158,7 +158,7 @@ class HackathonStore {
     // Load all data from localStorage
     this.config = loadFromStorage<HackathonConfig>(STORAGE_KEYS.CONFIG, {
       id: generateId(),
-      name: 'GL Hackathon 2024',
+      name: 'GL Hackathon 2026',
       currentState: 'DRAFT',
       maxTeamSize: 4,
       maxTeams: 100,
@@ -996,7 +996,7 @@ class HackathonStore {
     // Re-initialize
     this.config = {
       id: generateId(),
-      name: 'GL Hackathon 2024',
+      name: 'GL Hackathon 2026',
       currentState: 'DRAFT',
       maxTeamSize: 4,
       maxTeams: 100,

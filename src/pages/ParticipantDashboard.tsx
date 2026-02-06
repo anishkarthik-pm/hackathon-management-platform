@@ -128,9 +128,9 @@ const ParticipantDashboard = () => {
   };
 
   const announcements = [
-    { date: 'Jan 14', text: 'Reminder: Complete your team setup!', important: currentState === 'REGISTRATION_OPEN' },
-    { date: 'Jan 12', text: 'Problem statements are now available', important: false },
-    { date: 'Jan 10', text: 'Welcome to GL Hackathon 2024!', important: false },
+    { date: 'Feb 14', text: 'Reminder: Complete your team setup!', important: currentState === 'REGISTRATION_OPEN' },
+    { date: 'Feb 12', text: 'Problem statements are now available', important: false },
+    { date: 'Feb 10', text: 'Welcome to GL Hackathon 2026!', important: false },
   ];
 
   const resources = [
@@ -144,7 +144,7 @@ const ParticipantDashboard = () => {
     switch (currentState) {
       case 'DRAFT':
         return {
-          title: 'GL Hackathon 2024',
+          title: 'GL Hackathon 2026',
           subtitle: 'Event is being prepared. Stay tuned!',
           action: null,
           showCountdown: false,
@@ -152,7 +152,7 @@ const ParticipantDashboard = () => {
         };
       case 'REGISTRATION_OPEN':
         return {
-          title: 'Welcome to GL Hackathon 2024!',
+          title: 'Welcome to GL Hackathon 2026!',
           subtitle: team ? 'Your team is ready!' : 'Complete your team setup to get started',
           action: team ? { label: 'View Problem Statement', onClick: () => navigate('/problem') } : { label: 'Go to Team Setup', onClick: () => navigate('/team-setup') },
           showCountdown: true,
